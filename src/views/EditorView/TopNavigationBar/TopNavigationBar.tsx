@@ -10,6 +10,7 @@ import {ImageButton} from '../../Common/ImageButton/ImageButton';
 import {Settings} from '../../../settings/Settings';
 import {ProjectData} from '../../../store/general/types';
 import DropDownMenu from './DropDownMenu/DropDownMenu';
+import {store} from '../../../index';
 
 interface IProps {
     updateActivePopupTypeAction: (activePopupType: PopupWindowType) => any;
@@ -47,9 +48,22 @@ const TopNavigationBar: React.FC<IProps> = (props) => {
                         <img
                             draggable={false}
                             alt={'make-sense'}
-                            src={'/make-sense-ico-transparent.png'}
+                            src={'ico/rfs-logo-no-text.png'}
                         />
-                        Make Sense
+                        RFS Annotator
+                    </div>
+                </div>
+                <div className='NavigationBarGroupWrapper'>
+                    <div
+                        className='Header'
+                        onClick={ store.dispatch(updateActivePopupType(PopupWindowType.LOAD_AI_MODEL)) }
+                    >
+                        <img 
+                        draggable={false}
+                        alt={'AI'}
+                        src={'ico/ai-white.png'}
+                        />
+                        Run AI
                     </div>
                 </div>
                 <div className='NavigationBarGroupWrapper'>
