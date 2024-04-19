@@ -1,6 +1,6 @@
 {
-  "short_name": "makesense.ai",
-  "name": "makesense.ai - free to use online tool for labelling photos",
+  "short_name": "RFS ML suite",
+  "name": "RFS ML suite - online tooling for report generation and damage categorisation",
   "icons": [
     {
       "src": "favicon.ico",

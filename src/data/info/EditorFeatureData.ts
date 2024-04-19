@@ -6,33 +6,24 @@ export interface IEditorFeature {
 
 export const EditorFeatureData: IEditorFeature[] = [
     {
-        displayText: 'Open source and free to use under GPLv3 license',
-        imageSrc: 'ico/open-source.png',
-        imageAlt: 'open-source',
-    },
-    {
-        displayText: 'No advanced installation required, just open up your browser',
+        displayText: 'Upload turbine images on the next page',
         imageSrc: 'ico/online.png',
         imageAlt: 'online',
     },
     {
-        displayText: "We don't store your images, because we don't send them anywhere",
-        imageSrc: 'ico/private.png',
-        imageAlt: 'private',
+        displayText: 'Run images through AI to get initial bounding box estimations',
+        imageSrc: 'ico/robot.png',
+        imageAlt: 'robot',
     },
     {
-        displayText: 'Support multiple label types - rects, lines, points and polygons',
+        displayText: "Correct any incorrect labels until you're satisfied",
         imageSrc: 'ico/labels.png',
         imageAlt: 'labels',
     },
     {
-        displayText: 'Support output file formats like YOLO, VOC XML, VGG JSON, CSV',
+        displayText: 'Output to PDF report for client',
         imageSrc: 'ico/file.png',
         imageAlt: 'file',
     },
-    {
-        displayText: 'Use AI to make your work more productive',
-        imageSrc: 'ico/robot.png',
-        imageAlt: 'robot',
-    },
+
 ];
