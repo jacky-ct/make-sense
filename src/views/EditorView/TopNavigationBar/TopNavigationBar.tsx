@@ -35,6 +35,7 @@ const TopNavigationBar: React.FC<IProps> = (props) => {
     };
 
     const closePopup = () => props.updateActivePopupTypeAction(PopupWindowType.EXIT_PROJECT)
+    const runAI = () => store.dispatch(updateActivePopupType(PopupWindowType.LOAD_AI_MODEL))
 
     return (
         <div className='TopNavigationBar'>
@@ -53,10 +54,9 @@ const TopNavigationBar: React.FC<IProps> = (props) => {
                         RFS Annotator
                     </div>
                 </div>
-                <div className='NavigationBarGroupWrapper'>
                     <div
                         className='Header'
-                        onClick={ store.dispatch(updateActivePopupType(PopupWindowType.LOAD_AI_MODEL)) }
+                        onClick={ runAI }
                     >
                         <img 
                         draggable={false}
@@ -65,7 +65,6 @@ const TopNavigationBar: React.FC<IProps> = (props) => {
                         />
                         Run AI
                     </div>
-                </div>
                 <div className='NavigationBarGroupWrapper'>
                     <DropDownMenu/>
                 </div>
