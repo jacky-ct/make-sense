@@ -23,17 +23,17 @@ interface SelectableModel {
 const models: SelectableModel[] = [
     {
         model: AIModel.YOLO_V5_OBJECT_DETECTION,
-        name: 'YOLOv5 - object detection using rectangles',
+        name: 'YOLOv8 - object detection using rectangles',
         flag: false
     },
     {
         model: AIModel.SSD_OBJECT_DETECTION,
-        name: 'COCO SSD - object detection using rectangles',
+        name: 'Option 2',
         flag: false
     },
     {
         model: AIModel.POSE_DETECTION,
-        name: 'POSE-NET - pose estimation using points',
+        name: 'Option 3',
         flag: false
     }
 ];
@@ -120,9 +120,9 @@ const LoadModelPopup: React.FC<IProps> = ({ updateActivePopupType }) => {
     const renderContent = () => {
         return <div className='LoadModelPopupContent'>
             <div className='Message'>
-                Speed up your annotation process using AI. Don't worry, your photos are still safe. To take care of
-                your privacy, we decided not to send your images to the server, but instead bring AI to you. Make sure
-                that you have a fast and stable connection - it may take a while to load the model.
+                Speed up your annotation process using the YOLOv8 model trained on pictures of wind turbines. The model is locally stored on your PC, 
+                and any processing of images happens locally. You can check for model updates below, which will be synced with the model on our 
+                server (TODO)
             </div>
             <div className='Companion'>
                 {modelIsLoadingStatus ?
