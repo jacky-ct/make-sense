@@ -43,7 +43,7 @@ const InsertLabelNamesPopup: React.FC<IProps> = (
         projectType,
         enablePerClassColoration
     }) => {
-    const [labelNames, setLabelNames] = useState(LabelsSelector.getLabelNames());
+    const [labelNames, setLabelNames] = useState(Settings.DEFAULT_LABELS);
 
     const validateEmptyLabelNames = (): boolean => {
         const emptyLabelNames = filter(labelNames, (labelName: LabelName) => labelName.name === '');
@@ -236,7 +236,7 @@ const InsertLabelNamesPopup: React.FC<IProps> = (
         <GenericYesNoPopup
             title={isUpdate ? 'Edit labels' : 'Edit labels'}
             renderContent={renderContent}
-            acceptLabel={isUpdate ? 'Accept' : 'Start project'}
+            acceptLabel={isUpdate ? 'Accept' : 'Continue'}
             onAccept={isUpdate ? safeOnUpdateAcceptCallback : safeOnCreateAcceptCallback}
             rejectLabel={isUpdate ? 'Cancel' : 'Load labels from file'}
             onReject={isUpdate ? onUpdateRejectCallback : onCreateRejectCallback}
