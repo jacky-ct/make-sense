@@ -24,25 +24,4 @@ export const LabelToolkitData: ILabelToolkit[] = [
         imageAlt: 'rectangle',
         projectType: ProjectType.OBJECT_DETECTION,
     },
-    {
-        labelType: LabelType.POINT,
-        headerText: 'Point',
-        imageSrc: 'ico/point.png',
-        imageAlt: 'point',
-        projectType: ProjectType.OBJECT_DETECTION,
-    },
-    {
-        labelType: LabelType.LINE,
-        headerText: 'Line',
-        imageSrc: 'ico/line.png',
-        imageAlt: 'line',
-        projectType: ProjectType.OBJECT_DETECTION,
-    },
-    {
-        labelType: LabelType.POLYGON,
-        headerText: 'Polygon',
-        imageSrc: 'ico/polygon.png',
-        imageAlt: 'polygon',
-        projectType: ProjectType.OBJECT_DETECTION,
-    },
 ];

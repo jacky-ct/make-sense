@@ -51,9 +51,6 @@ class LabelsToolkit extends React.Component<IProps, IState> {
             ] :
             [
                 LabelType.RECT,
-                LabelType.POINT,
-                LabelType.LINE,
-                LabelType.POLYGON
             ];
 
         const activeTab: LabelType = props.activeLabelType ? props.activeLabelType : this.tabs[0];
@@ -135,27 +132,6 @@ class LabelsToolkit extends React.Component<IProps, IState> {
                     style={{height: isActive ? activeTabContentHeight : 0}}
                 >
                     {labelType === LabelType.RECT && <RectLabelsList
-                        size={{
-                            width: size.width - 20,
-                            height: activeTabContentHeight - 20
-                        }}
-                        imageData={imagesData[activeImageIndex]}
-                    />}
-                    {labelType === LabelType.POINT && <PointLabelsList
-                        size={{
-                            width: size.width - 20,
-                            height: activeTabContentHeight - 20
-                        }}
-                        imageData={imagesData[activeImageIndex]}
-                    />}
-                    {labelType === LabelType.LINE && <LineLabelsList
-                        size={{
-                            width: size.width - 20,
-                            height: activeTabContentHeight - 20
-                        }}
-                        imageData={imagesData[activeImageIndex]}
-                    />}
-                    {labelType === LabelType.POLYGON && <PolygonLabelsList
                         size={{
                             width: size.width - 20,
                             height: activeTabContentHeight - 20
