@@ -25,16 +25,6 @@ const models: SelectableModel[] = [
         model: AIModel.YOLO_V5_OBJECT_DETECTION,
         name: 'YOLOv8 - object detection using rectangles',
         flag: false
-    },
-    {
-        model: AIModel.SSD_OBJECT_DETECTION,
-        name: 'Option 2',
-        flag: false
-    },
-    {
-        model: AIModel.POSE_DETECTION,
-        name: 'Option 3',
-        flag: false
     }
 ];
 
@@ -57,6 +47,8 @@ const LoadModelPopup: React.FC<IProps> = ({ updateActivePopupType }) => {
 
     const onAccept = () => {
         setModelIsLoadingStatus(true);
+        updateActivePopupType(PopupWindowType.LOAD_YOLO_V5_MODEL)
+        /*
         switch (extractSelectedModel()) {
             case AIModel.POSE_DETECTION:
                 PoseDetector.loadModel(() => {
@@ -72,45 +64,7 @@ const LoadModelPopup: React.FC<IProps> = ({ updateActivePopupType }) => {
                 updateActivePopupType(PopupWindowType.LOAD_YOLO_V5_MODEL);
                 break;
         }
-    };
-
-    const onSelect = (selectedModel: AIModel) => {
-        const nextSelectedModelToLoad: SelectableModel[] = selectedModelToLoad.map((model: SelectableModel) => {
-            if (model.model === selectedModel)
-                return {
-                    ...model,
-                    flag: !model.flag
-                };
-            else
-                return {
-                    ...model,
-                    flag: false
-                };
-        });
-        updateSelectedModelToLoad(nextSelectedModelToLoad);
-    };
-
-    const getOptions = () => {
-        return selectedModelToLoad.map((entry: SelectableModel) => {
-            return <div
-                className='OptionsItem'
-                onClick={() => onSelect(entry.model)}
-                key={entry.model}
-            >
-                {entry.flag ?
-                    <img
-                        draggable={false}
-                        src={'ico/checkbox-checked.png'}
-                        alt={'checked'}
-                    /> :
-                    <img
-                        draggable={false}
-                        src={'ico/checkbox-unchecked.png'}
-                        alt={'unchecked'}
-                    />}
-                {entry.name}
-            </div>
-        })
+        */
     };
 
     const onReject = () => {
@@ -124,18 +78,6 @@ const LoadModelPopup: React.FC<IProps> = ({ updateActivePopupType }) => {
                 and any processing of images happens locally. You can check for model updates below, which will be synced with the model on our 
                 server (TODO)
             </div>
-            <div className='Companion'>
-                {modelIsLoadingStatus ?
-                    <ClipLoader
-                        size={40}
-                        color={CSSHelper.getLeadingColor()}
-                        loading={true}
-                    /> :
-                    <div className='Options'>
-                        {getOptions()}
-                    </div>
-                }
-            </div>
         </div>
     };
 
@@ -145,7 +87,6 @@ const LoadModelPopup: React.FC<IProps> = ({ updateActivePopupType }) => {
             renderContent={renderContent}
             acceptLabel={'Use model!'}
             onAccept={onAccept}
-            disableAcceptButton={modelIsLoadingStatus || !extractSelectedModel()}
             rejectLabel={"I'm going on my own"}
             onReject={onReject}
             disableRejectButton={modelIsLoadingStatus}
