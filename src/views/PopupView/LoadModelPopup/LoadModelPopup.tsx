@@ -47,24 +47,7 @@ const LoadModelPopup: React.FC<IProps> = ({ updateActivePopupType }) => {
 
     const onAccept = () => {
         setModelIsLoadingStatus(true);
-        updateActivePopupType(PopupWindowType.LOAD_YOLO_V5_MODEL)
-        /*
-        switch (extractSelectedModel()) {
-            case AIModel.POSE_DETECTION:
-                PoseDetector.loadModel(() => {
-                    PopupActions.close();
-                });
-                break;
-            case AIModel.SSD_OBJECT_DETECTION:
-                SSDObjectDetector.loadModel(() => {
-                    PopupActions.close();
-                });
-                break;
-            case AIModel.YOLO_V5_OBJECT_DETECTION:
-                updateActivePopupType(PopupWindowType.LOAD_YOLO_V5_MODEL);
-                break;
-        }
-        */
+        updateActivePopupType(PopupWindowType.LOAD_YOLO_V5_MODEL);
     };
 
     const onReject = () => {
