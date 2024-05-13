@@ -1,4 +1,7 @@
 import {PopupWindowType} from '../data/enums/PopupWindowType';
+import {v4 as uuidv4} from 'uuid';
+import { sample } from 'lodash';
+import { LabelName } from 'src/store/labels/types';
 
 export class Settings {
     public static readonly GITHUB_URL: string = 'https://github.com/jacky-ct';
@@ -74,4 +77,52 @@ export class Settings {
         'image_width',
         'image_height'
     ].join(Settings.CSV_SEPARATOR)
+
+    public static readonly DEFAULT_LABELS : LabelName[] = [
+        {
+            id: uuidv4(),
+            name: 'Chip',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'Crack',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'Damage',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'VG Damage',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'Discoloration',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'Erosion',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'Flaking',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'Peeling',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        },
+        {
+            id: uuidv4(),
+            name: 'Pinholes',
+            color: sample(this.LABEL_COLORS_PALETTE)
+        }
+    ]
 }
