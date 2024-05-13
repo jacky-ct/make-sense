@@ -204,8 +204,8 @@ const InsertLabelNamesPopup: React.FC<IProps> = (
                         isUpdate ?
                             'You can now edit the label names you use to describe the objects in the photos. Use the ' +
                             '+ button to add a new empty text field.' :
-                            'Before you start, you can create a list of labels you plan to assign to objects in your ' +
-                            'project. You can also choose to skip that part for now and define label names as you go.'
+                            'In 99% of cases you should not need to, but if you need to change the labels that you apply' +
+                            'to the images, you can do so here. If you don\'t need to, ignore this'
                     }
                 </div>
                 <div className='LabelsContainer'>
@@ -234,7 +234,7 @@ const InsertLabelNamesPopup: React.FC<IProps> = (
 
     return (
         <GenericYesNoPopup
-            title={isUpdate ? 'Edit labels' : 'Create labels'}
+            title={isUpdate ? 'Edit labels' : 'Edit labels'}
             renderContent={renderContent}
             acceptLabel={isUpdate ? 'Accept' : 'Start project'}
             onAccept={isUpdate ? safeOnUpdateAcceptCallback : safeOnCreateAcceptCallback}
