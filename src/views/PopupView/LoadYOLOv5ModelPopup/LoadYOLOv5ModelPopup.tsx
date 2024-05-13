@@ -67,7 +67,7 @@ const LoadYOLOv5ModelPopup: React.FC<IProps> = ({ updateActivePopupTypeAction, s
 
     // BUSINESS LOGIC
 
-    const [modelSource, setModelSource] = useState(ModelSource.UPLOAD);
+    const [modelSource, setModelSource] = useState(ModelSource.DOWNLOAD);
     const [selectedPretrainedModel, setSelectedPretrainedModel] = useState(PretrainedModel.YOLO_V5_N_COCO);
     const [isLoading, setIsLoading] = useState(false);
     const [modelFiles, setModeFiles] = useState([]);
@@ -188,7 +188,7 @@ const LoadYOLOv5ModelPopup: React.FC<IProps> = ({ updateActivePopupTypeAction, s
         const uploadMessage: string = 'Drag and drop your own YOLOv5 model converted to tensorflow.js format and ' +
             'speed up annotation process. Make sure to upload all required files: model.json, model shards as well ' +
             'as .txt containing list of detected classes names.'
-        const downloadMessage: string = 'Use one of ours pretrained YOLOv5 models to speed up annotation process.'
+        const downloadMessage: string = 'Use our pretrained YOLOv8 models to speed up annotation process.'
         return(<div className='message'>
             {modelSource === ModelSource.DOWNLOAD ? downloadMessage : uploadMessage}
         </div>)
