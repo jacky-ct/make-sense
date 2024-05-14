@@ -35,9 +35,6 @@ export class AIActions {
                     AIRoboflowAPIObjectDetectionActions.detectRects(imageData)
                 }
                 break;
-            case LabelType.POINT:
-                AIPoseDetectionActions.detectPoses(imageId, image);
-                break;
         }
     }
 
@@ -58,9 +55,6 @@ export class AIActions {
                     AIRoboflowAPIObjectDetectionActions.rejectAllSuggestedRectLabels(imageData)
                 }
                 break;
-            case LabelType.POINT:
-                AIPoseDetectionActions.rejectAllSuggestedPointLabels(imageData);
-                break;
         }
     }
 
@@ -80,9 +74,6 @@ export class AIActions {
                 if (isRoboflowAPIModelLoaded) {
                     AIRoboflowAPIObjectDetectionActions.acceptAllSuggestedRectLabels(imageData)
                 }
-                break;
-            case LabelType.POINT:
-                AIPoseDetectionActions.acceptAllSuggestedPointLabels(imageData);
                 break;
         }
     }

@@ -195,20 +195,6 @@ class Editor extends React.Component<IProps, IState> {
                     />
                 })
         }
-        else if (this.props.activeLabelType === LabelType.POINT) {
-            return this.props.imageData.labelPoints
-                .filter((labelPoint: LabelPoint) => labelPoint.isCreatedByAI && labelPoint.status !== LabelStatus.ACCEPTED)
-                .map((labelPoint: LabelPoint) => {
-                    const positionOnImage: IPoint = {x: labelPoint.point.x, y: labelPoint.point.y};
-                    const positionOnViewPort: IPoint = RenderEngineUtil.transferPointFromImageToViewPortContent(positionOnImage, editorData);
-                    return <LabelControlPanel
-                        position={positionOnViewPort}
-                        labelData={labelPoint}
-                        imageData={this.props.imageData}
-                        key={labelPoint.id}
-                    />
-                })
-        }
         else return null;
     };
 

@@ -3,7 +3,6 @@ import {ImageData, LabelLine, LabelName, LabelPoint, LabelPolygon, LabelRect} fr
 import {filter} from 'lodash';
 import {store} from '../../index';
 import {updateImageData, updateImageDataById} from '../../store/labels/actionCreators';
-import {LabelType} from '../../data/enums/LabelType';
 import {LabelUtil} from '../../utils/LabelUtil';
 
 export class LabelActions {
@@ -14,17 +13,7 @@ export class LabelActions {
     }
 
     public static deleteImageLabelById(imageId: string, labelId: string) {
-        switch (LabelsSelector.getActiveLabelType()) {
-            case LabelType.POINT:
-                LabelActions.deletePointLabelById(imageId, labelId);
-                break;
-            case LabelType.RECT:
-                LabelActions.deleteRectLabelById(imageId, labelId);
-                break;
-            case LabelType.POLYGON:
-                LabelActions.deletePolygonLabelById(imageId, labelId);
-                break;
-        }
+            LabelActions.deleteRectLabelById(imageId, labelId);
     }
 
     public static deleteRectLabelById(imageId: string, labelRectId: string) {

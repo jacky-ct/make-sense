@@ -105,8 +105,7 @@ const EditorTopNavigationBar: React.FC<IProps> = (
     const withAI = (
         (activeLabelType === LabelType.RECT && AISelector.isAISSDObjectDetectorModelLoaded()) ||
         (activeLabelType === LabelType.RECT && AISelector.isAIYOLOObjectDetectorModelLoaded()) ||
-        (activeLabelType === LabelType.RECT && AISelector.isRoboflowAPIModelLoaded()) ||
-        (activeLabelType === LabelType.POINT && AISelector.isAIPoseDetectorModelLoaded())
+        (activeLabelType === LabelType.RECT && AISelector.isRoboflowAPIModelLoaded())
     )
 
     return (

@@ -59,16 +59,8 @@ class ImagesList extends React.Component<IProps, IState> {
     private isImageChecked = (index:number): boolean => {
         const imageData = this.props.imagesData[index]
         switch (this.props.activeLabelType) {
-            case LabelType.LINE:
-                return imageData.labelLines.length > 0
             case LabelType.IMAGE_RECOGNITION:
                 return imageData.labelNameIds.length > 0
-            case LabelType.POINT:
-                return imageData.labelPoints
-                    .filter((labelPoint: LabelPoint) => labelPoint.status === LabelStatus.ACCEPTED)
-                    .length > 0
-            case LabelType.POLYGON:
-                return imageData.labelPolygons.length > 0
             case LabelType.RECT:
                 return imageData.labelRects
                     .filter((labelRect: LabelRect) => labelRect.status === LabelStatus.ACCEPTED)
