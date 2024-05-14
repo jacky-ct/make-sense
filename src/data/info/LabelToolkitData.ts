@@ -19,7 +19,7 @@ export const LabelToolkitData: ILabelToolkit[] = [
     },
     {
         labelType: LabelType.RECT,
-        headerText: 'Rect',
+        headerText: 'Bounding boxes',
         imageSrc: 'ico/rectangle.png',
         imageAlt: 'rectangle',
         projectType: ProjectType.OBJECT_DETECTION,
