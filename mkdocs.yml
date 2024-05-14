@@ -1,28 +1,17 @@
 # Project information
-site_name: Make Sense
-site_url: https://skalskip.github.io/make-sense
-site_author: Piotr Skalski
+site_name: RFS annotator
+site_url: https://github.com/jacky-ct/rfs-annotator
+site_author: Jackson Thomas
 site_description: >-
-  Free to use online tool for labelling photos
+  RFS internal tool for using AI to create bounding boxes for wind turbine damage diagnostics
 
 # Repository
-repo_name: 'SkalskiP/make-sense'
-repo_url: 'https://github.com/SkalskiP/make-sense'
+repo_name: 'jacky-ct/rfs-annotator'
+repo_url: 'https://github.com/jacky-ct/rfs-annotator'
 edit_uri: ""
 
 # Copyright
 copyright: Copyright &copy; 2019 Piotr Skalski
-
-# Customization
-extra:
-  version: 1.11.0-alpha
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/SkalskiP
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/PiotrSkalski92
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/piotr-skalski-36b5b4122/
 
 # Page tree
 nav:
