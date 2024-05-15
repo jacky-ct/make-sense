@@ -26,11 +26,7 @@ export class PoseDetector {
             .then((model: PoseNet) => {
                 PoseDetector.model = model;
                 store.dispatch(updatePoseDetectorStatus(true));
-                store.dispatch(updateActiveLabelType(LabelType.POINT));
                 const activeLabelType: LabelType = LabelsSelector.getActiveLabelType();
-                if (activeLabelType === LabelType.POINT) {
-                    AIPoseDetectionActions.detectPoseForActiveImage();
-                }
                 if (callback) {
                     callback();
                 }
